@@ -21,3 +21,109 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+
+
+
+// DAYJS STUFF TO SET DAY AND WORK WITH CHANGING HOURS
+
+const today = dayjs();
+const currentHour = today.format('hh, a')
+
+// sets current day to header of planner
+$('#currentDay').text(today.format('dddd, MMMM YYYY'));
+
+console.log(currentHour)
+
+// Array of objects to store and loop through data
+const dailySchedule = [
+  { 
+    block: "0",
+    time: "9",
+    am_pm: "AM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "1",
+    time: "10",
+    am_pm: "AM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "2",
+    time: "11",
+    am_pm: "AM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "3",
+    time: "12",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "4",
+    time: "1",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "5",
+    time: "2",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "6",
+    time: "3",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "7",
+    time: "4",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+  { 
+    block: "8",
+    time: "5",
+    am_pm: "PM",
+    tasks: "",
+    button: ""
+  },
+]
+
+
+// Loop to set up each hour block from daily schedule array
+dailySchedule.forEach(function(dailySchedule){
+  
+  var hourRow = $("<div>");
+  hourRow.attr('class', 'row');
+  $("#main-container").append(hourRow);
+
+  var timeBlock = $('<div>');
+  timeBlock.addClass("col-2 col-md-1 hour text-center");
+  timeBlock.text(dailySchedule.time + " " + dailySchedule.am_pm);
+  hourRow.append(timeBlock);
+
+  var textBlock = $('<textarea>');
+  textBlock.addClass("col-8 col-md-10 description");
+  textBlock.text(dailySchedule.tasks);
+  hourRow.append(textBlock);
+
+  var button = $('<button>');
+  button.addClass("btn saveBtn col-2 col-md-1");
+  button.addClass("fas fa-save");
+  hourRow.append(button);
+
+})
+
