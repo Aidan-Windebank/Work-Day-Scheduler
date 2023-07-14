@@ -1,13 +1,13 @@
 # Work Day Planner: Third-Party APIs
 
-Homework assignment demonstrating the use of jQuery, Bootstrap, and dayJS
+Homework assignment demonstrating the use of JQuery, Bootstrap, and dayJS
 
 ## Purpose of Assignment
 - The purpose of the assignment was to creat a simple 9-5 work-day scheduler.
-- The scheduler was created without utilizing much HTML, and was displayed and functioned but utilizing JQuery, Bootstrap, and dayJS.
-- The user of the schedule would be confronted with a work-day split into hour blocks where they could imput tasks and reminders. 
+- The scheduler was created without utilizing much HTML, and was displayed and functioned utilizing JQuery, Bootstrap, and dayJS.
+- The user is given a schedule with the work-day split into hour blocks where they could input tasks and reminders. 
 - The hour blocks are color coded to show wether or not that block is in the past, present, or future.
-- When the user submits data to the scheduler and clicks the save button on the right, the data is stored tolocal storage and stays on the scheduler when the page is refreshed or closed. 
+- When the user submits data to the scheduler and clicks the save button on the right, the data is stored to local storage and stays on the scheduler when the page is refreshed or closed. 
 
 ## Instructions for the User
  - Please use website and comment on any errors 
@@ -17,4 +17,4 @@ Homework assignment demonstrating the use of jQuery, Bootstrap, and dayJS
 <img src="./assets/work-day planner.png" alt="screenshot of working web page"/>
 
 ## Link to Working Version of Code
-[Click Here to View Webpage](https://aidan-windebank.github.io/semantic-html/)
+[Click Here to View Webpage]( https://aidan-windebank.github.io/Work-Day-Scheduler/)
