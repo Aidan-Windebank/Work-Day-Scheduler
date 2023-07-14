@@ -9,17 +9,10 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+
 });
 
 
@@ -136,19 +129,50 @@ dailySchedule.forEach(function (dailySchedule) {
   button.addClass("btn saveBtn col-2 col-md-1");
   button.addClass("fas fa-save");
   hourRow.append(button);
+  
+  // const buttonClick = $("#main-container").children('div').children('button')
+  // buttonClick.on("click", function (event) {
+  // event.preventDefault();
+
+  $(hourRow).each(function(index, hourRow){
+    console.log(hourRow);
+    var buttonClick = $(hourRow).children("button");
+    // console.log(buttonClick);
+    $(buttonClick).on("click", function(){
+      var hourRowTask = $(hourRow).children("textarea").val();
+      localStorage.setItem(index, hourRowTask);
+    })
+   
+  })
 })
 
 
 
-const buttonClick = $("#main-container").children('div').children('button')
-buttonClick.on("click", function (event) {
-  event.preventDefault();
 
-  var saveTasks = dailySchedule.tasks
 
-  console.log(saveTasks)
 
-})
+
+  // localStorage.setItem("tasks", JSON.stringify(dailySchedule));
+  // renderMessage();
+  // });
+  // function renderMessage() {
+  // var tasks = JSON.parse(localStorage.getItem("tasks"));
+  // if (tasks !== null) {
+  //   document.querySelector(".message").textContent = lastGrade.student +
+  //     " received a/an " + lastGrade.grade
+  //   }
+  // }
+
+
+
+
+
+
+
+// var saveTasks = $(this).dailySchedule.tasks
+// console.log(this.siblings('textarea'))
+// console.log(saveTasks)
+// console.log()
 
 
 
